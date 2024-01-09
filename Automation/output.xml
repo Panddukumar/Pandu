@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240109 11:42:54.020" rpa="false" schemaversion="4">
+<suite id="s1" name="Yahoo" source="/home/pandu/Desktop/Automation/Pandu/Automation/yahoo.robot">
+<test id="s1-t1" name="TC_01 yahoo mail Login" line="11">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240109 11:42:54.224" level="INFO">Opening browser 'chrome' to base url 'https://login.yahoo.com/?.intl=in'.</msg>
+<status status="PASS" starttime="20240109 11:42:54.223" endtime="20240109 11:43:02.488"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240109 11:43:02.488" endtime="20240109 11:43:02.638"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="username"]</arg>
+<arg>pandukumarbr@yahoo.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240109 11:43:02.640" level="INFO">Typing text 'pandukumarbr@yahoo.com' into text field '//input[@name="username"]'.</msg>
+<status status="PASS" starttime="20240109 11:43:02.639" endtime="20240109 11:43:02.952"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//input[@id="login-signin"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240109 11:43:02.953" level="INFO">Clicking button '//input[@id="login-signin"]'.</msg>
+<status status="PASS" starttime="20240109 11:43:02.952" endtime="20240109 11:43:03.211"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240109 11:43:13.212" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20240109 11:43:03.211" endtime="20240109 11:43:13.213"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@type="password"]</arg>
+<arg>Nagendra@1008</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240109 11:43:13.215" level="INFO">Typing password into text field '//input[@type="password"]'.</msg>
+<msg timestamp="20240109 11:43:13.415" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240109 11:43:13.416" level="FAIL">Element with locator '//input[@type="password"]' not found.</msg>
+<status status="FAIL" starttime="20240109 11:43:13.214" endtime="20240109 11:43:13.423"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240109 11:43:13.424" endtime="20240109 11:43:13.424"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[@id="ybarMailLink"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240109 11:43:13.424" endtime="20240109 11:43:13.424"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[text()="Compose"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240109 11:43:13.424" endtime="20240109 11:43:13.424"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="message-to-field"]</arg>
+<arg>pandukumarbr@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240109 11:43:13.425" endtime="20240109 11:43:13.425"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id="compose-subject-input"]</arg>
+<arg>Resume</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240109 11:43:13.425" endtime="20240109 11:43:13.425"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@title="Attach files"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240109 11:43:13.425" endtime="20240109 11:43:13.425"/>
+</kw>
+<kw name="Choose File" library="SeleniumLibrary">
+<arg>//span[text()="Attach files from computer"]</arg>
+<arg>/home/pandu/Downloads/Pandu Kumar. python tester Resume (3).pdf</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="NOT RUN" starttime="20240109 11:43:13.425" endtime="20240109 11:43:13.425"/>
+</kw>
+<status status="FAIL" starttime="20240109 11:42:54.222" endtime="20240109 11:43:13.425">Element with locator '//input[@type="password"]' not found.</status>
+</test>
+<status status="FAIL" starttime="20240109 11:42:54.022" endtime="20240109 11:43:13.426"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Yahoo">Yahoo</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240109 11:42:54.022" level="ERROR">Error in file '/home/pandu/Desktop/Automation/Pandu/Automation/yahoo.robot' on line 31: Creating keyword '/home/pandu/Desktop/Automation/Pandu/Automation/yahoo.robot' failed: User keyword cannot be empty.</msg>
+</errors>
+</robot>
