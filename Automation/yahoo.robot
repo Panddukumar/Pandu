@@ -27,5 +27,3 @@ TC_01 yahoo mail Login
 
 
 *** Keywords ***
-
-/home/pandu/Desktop/Automation/Pandu/Automation/yahoo.robot
