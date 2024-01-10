@@ -27,8 +27,3 @@ TC_01 yahoo mail Login
 
 
 *** Keywords ***
-
-
-
-
-
