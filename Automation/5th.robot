@@ -9,9 +9,8 @@ ${browser}    Chrome
 TC1 demo tour
     Open Browser    ${URL}    ${browser} 
     Input Text    //input[@name="userName"]    tutorial
-    Input Text    //input[@name="password"]    tutorial
+    Input Text    //input[@name="password"]   
     Click Element        //input[@name="submit"]
-    
 
 
 
