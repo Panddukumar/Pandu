@@ -3,11 +3,14 @@ Library    SeleniumLibrary
 
 *** Variables ***
 
-${URL}    https://www.orangehrm.com/en/orangehrm-starter-open-source-software/
+${URL}    https://demo.guru99.com/test/newtours/
 ${browser}    Chrome
 *** Test Cases ***
-TC1 Facebook Login
-    Open Browser    ${URL}    ${browser}  
+TC1 demo tour
+    Open Browser    ${URL}    ${browser} 
+    Input Text    //input[@name="userName"]    tutorial
+    Input Text    //input[@name="password"]    tutorial
+    Click Element        //input[@name="submit"]
     
 
 
