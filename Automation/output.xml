@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240310 11:42:43.439" rpa="false" schemaversion="4">
+<suite id="s1" name="5Th" source="D:\Pandu\GITPandu\Automation\5th.robot">
+<test id="s1-t1" name="TC1 demo tour" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240310 11:42:43.761" level="INFO">Opening browser 'Chrome' to base url 'https://demo.guru99.com/test/newtours/'.</msg>
+<status status="PASS" starttime="20240310 11:42:43.761" endtime="20240310 11:42:55.654"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="userName"]</arg>
+<arg>tutorial</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240310 11:42:55.665" level="INFO">Typing text 'tutorial' into text field '//input[@name="userName"]'.</msg>
+<status status="PASS" starttime="20240310 11:42:55.662" endtime="20240310 11:42:55.922"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="password"]</arg>
+<arg>tutorial</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240310 11:42:55.922" level="INFO">Typing text 'tutorial' into text field '//input[@name="password"]'.</msg>
+<status status="PASS" starttime="20240310 11:42:55.922" endtime="20240310 11:42:56.055"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//input[@name="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240310 11:42:56.055" level="INFO">Clicking element '//input[@name="submit"]'.</msg>
+<status status="PASS" starttime="20240310 11:42:56.055" endtime="20240310 11:42:57.498"/>
+</kw>
+<status status="PASS" starttime="20240310 11:42:43.761" endtime="20240310 11:42:57.498"/>
+</test>
+<status status="PASS" starttime="20240310 11:42:43.439" endtime="20240310 11:42:57.513"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="5Th">5Th</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
