@@ -1,6 +1,5 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchWindowException
 import time
 
 def open_odd_links_in_new_window():
@@ -12,20 +11,16 @@ def open_odd_links_in_new_window():
 
     # Open only odd-numbered links in new tabs
     for i in range(len(nav_links)):
-        if (i % 2) != 0:  # Check if the index is odd
+        if (i%2)== 0:  # Check if the index is odd
             link = nav_links[i]
             link_text = link.text
 
             # Open the link in a new tab
-            link.click()
+            driver.execute_script("window.open('" + link.get_attribute("href") + "', '_blank');")
             time.sleep(2)  # Wait for new tab to open
             
             # Switch to the new tab
-            try:
-                driver.switch_to.window(driver.window_handles[-1])
-            except NoSuchWindowException:
-                print("Window/tab closed prematurely.")
-                continue  # Skip to the next iteration
+            driver.switch_to.window(driver.window_handles[-1])
 
             # Print the title of the opened page
             print("Opened:", link_text)
