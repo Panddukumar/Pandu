@@ -1,3 +1,4 @@
+import pytest
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
@@ -16,11 +17,18 @@ for i in range(len(nav_links)):
         # Print the title of the page
         driver.execute_script("window.open('"+url+"', '_blank');")
         time.sleep(2)  # Wait for the new tab to open
-        driver.switch_to.window(driver.window_handles[-1])  # Switch to the new tab
-        title = driver.title  # Get the title of the page
-        print("Title:", title)  # Print the title
-        driver.close()  # Close the new tab
-        driver.switch_to.window(driver.window_handles[0])  # Switch back to the main tab (home page)
+
+windowIDS=driver.window_handles
+for winid in windowIDS:
+    driver.switch_to.window(winid)
+    print(driver.title)
+
+
+
+
+
+
+        
 
 # Close the browser
 driver.quit()

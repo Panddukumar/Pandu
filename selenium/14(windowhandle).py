@@ -7,6 +7,7 @@ driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
 driver.implicitly_wait(10)
 driver.find_element(By.XPATH,"(//p[@class='oxd-text oxd-text--p orangehrm-copyright'])[2]/a").click()
 
+
 windows=driver.window_handles
 # parent=windows[0]
 # print(parent)
