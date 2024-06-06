@@ -14,4 +14,4 @@ Example Test
         Click Element    ${checkbox}
     END
 
-    [Teardown]    Close Browser
+    [Teardown]    Close All Browsers
