@@ -9,6 +9,12 @@ driver.maximize_window()
 
 checkboxes=driver.find_elements(By.XPATH,"//input[@class='form-check-input' and contains(@id,'day')]")
 
+
+for i in range(len(checkboxes)):
+    if i>3:
+        checkboxes[i].click()
+
+
 # for checkbox in checkboxes:
 #     checkbox.click()
 # time.sleep(5)
@@ -23,9 +29,6 @@ checkboxes=driver.find_elements(By.XPATH,"//input[@class='form-check-input' and 
 #         checkbox.click()
 # time.sleep(5)
         
-# for i in range(len(checkboxes)):
-#     if i>3:
-#         checkboxes[i].click()
 
 # time.sleep(5)
 

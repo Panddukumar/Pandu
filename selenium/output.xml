@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240414 14:27:38.850" rpa="false" schemaversion="4">
+<suite id="s1" name="Selenium" source="D:\Pandu\GITPandu\selenium">
+<suite id="s1-s1" name="1" source="D:\Pandu\GITPandu\selenium\1.robot">
+<test id="s1-s1-t1" name="Open Odd Numbered Links" line="9">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240414 14:27:39.146" level="INFO">Opening browser 'Chrome' to base url 'https://testautomationpractice.blogspot.com/'.</msg>
+<msg timestamp="20240414 14:27:39.620" level="WARN">The chromedriver version (122.0.6261.94) detected in PATH at D:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.122); currently, chromedriver 123.0.6312.122 is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20240414 14:27:39.145" endtime="20240414 14:27:46.587"/>
+</kw>
+<kw name="Select From List By Index" library="SeleniumLibrary">
+<arg>country</arg>
+<arg>-1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<msg timestamp="20240414 14:27:46.590" level="INFO">Selecting options from selection list 'country' by index -1.</msg>
+<msg timestamp="20240414 14:27:46.831" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20240414 14:27:46.831" level="FAIL">NoSuchElementException: Message: Could not locate element with index -1; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+</msg>
+<status status="FAIL" starttime="20240414 14:27:46.589" endtime="20240414 14:27:46.834"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240414 14:27:46.835" endtime="20240414 14:27:46.835"/>
+</kw>
+<status status="FAIL" starttime="20240414 14:27:39.144" endtime="20240414 14:27:46.835">NoSuchElementException: Message: Could not locate element with index -1; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+</status>
+</test>
+<status status="FAIL" starttime="20240414 14:27:38.878" endtime="20240414 14:27:46.837"/>
+</suite>
+<status status="FAIL" starttime="20240414 14:27:38.852" endtime="20240414 14:27:46.839"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Selenium">Selenium</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="1">Selenium.1</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240414 14:27:39.620" level="WARN">The chromedriver version (122.0.6261.94) detected in PATH at D:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (123.0.6312.122); currently, chromedriver 123.0.6312.122 is recommended for chrome 123.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
