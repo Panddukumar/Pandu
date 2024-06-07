@@ -9,6 +9,3 @@ ${browser}    Chrome
 TC1 Facebook Login
     Open Browser    ${URL}    ${browser}  
 
-
-
-*** Keywords ***
