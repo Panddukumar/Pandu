@@ -11,10 +11,10 @@ ${Browser}  chrome
 TC_01 yahoo mail Login
     Open Browser    ${url}    ${browser}  
     Maximize Browser Window
-    Input Text  //input[@name="username"]    pandukumarbr@yahoo.com
+    Input Text  //input[@name="username"]    emailId
     Click Button    //input[@id="login-signin"] 
     Sleep   10s
-    Input Password  //input[@type="password"]   Nagendra@1008
+    Input Password  //input[@type="password"]   password
     Click Button    //button[@type="submit"]
     Click Element   //a[@id="ybarMailLink"]
     Click Element   //a[text()="Compose"]
