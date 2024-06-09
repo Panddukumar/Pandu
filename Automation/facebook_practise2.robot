@@ -11,8 +11,8 @@ ${browser}    chrome
 TC_01 open login page
     Open Browser    ${url}    ${browser}   
     Maximize Browser Window
-    Input Text    //*[@id="email"]    pandukumarnagendra@gmai.com
-    Input Password    //*[@id="passContainer"]   panj@kl1457
+    Input Text    //*[@id="email"]    email_id
+    Input Password    //*[@id="passContainer"]   password
     Sleep    30s
     Close Browser   
 
