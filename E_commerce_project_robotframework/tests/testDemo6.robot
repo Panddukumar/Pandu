@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   To validate the Login form
+Documentation   custom library for addding multiple products into cart based on user choice
 Library     SeleniumLibrary
 Library     Collections
 Library     ../customLibraries/Shop.py

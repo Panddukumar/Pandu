@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   To validate the Login form
+Documentation   To validate child window functionality
 Library     SeleniumLibrary
 Library     String
 Test Setup      open the browser with the Mortgage payment url

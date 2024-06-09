@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation    API Testing
 Library       Collections
 Library       RequestsLibrary
 

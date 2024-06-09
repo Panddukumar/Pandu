@@ -1,9 +1,9 @@
 *** Settings ***
-Documentation   To validate the Login form
+Documentation   parameterising data into testscript with multiple sets of data.
+...             testing same functionality with multiple sets of data
 Library     SeleniumLibrary
 Test Teardown   Close Browser
 Test Template   Validate UnSuccesful Login
-
 
 *** Variables ***
 ${Error_Message_Login}      css:.alert-danger

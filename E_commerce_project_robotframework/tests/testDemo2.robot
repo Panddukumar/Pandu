@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation   To validate the Login form
+Documentation   To validate the card titles in the page
 Library     SeleniumLibrary
 Library     Collections
 Test Setup      open the browser with the Mortgage payment url
