@@ -18,10 +18,10 @@ TC_01 yahoo mail Login
     Click Button    //button[@type="submit"]
     Click Element   //a[@id="ybarMailLink"]
     Click Element   //a[text()="Compose"]
-    Input Text       //input[@id="message-to-field"]    pandukumarbr@gmail.com
+    Input Text       //input[@id="message-to-field"]    emailid
     Input Text       //input[@id="compose-subject-input"]   Resume
     Click Button     //button[@title="Attach files"]
-    Choose File    //span[text()="Attach files from computer"]  /home/pandu/Downloads/Pandu Kumar. python tester Resume (3).pdf
+    Choose File    //span[text()="Attach files from computer"]  location of file
 
           
 
