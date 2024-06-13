@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240602 18:32:01.217" rpa="false" schemaversion="4">
+<suite id="s1" name="OrangeHRM" source="D:\OrangeHRM">
+<suite id="s1-s1" name="Testcases" source="D:\OrangeHRM\Testcases">
+<suite id="s1-s1-s1" name="Testcase" source="D:\OrangeHRM\Testcases\Testcase.robot">
+<kw name="launching browser" library="generic" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240602 18:32:01.973" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<msg timestamp="20240602 18:32:02.473" level="WARN">The chromedriver version (124.0.6367.91) detected in PATH at D:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (125.0.6422.114); currently, chromedriver 125.0.6422.141 is recommended for chrome 125.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20240602 18:32:01.973" endtime="20240602 18:32:08.903"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240602 18:32:08.904" endtime="20240602 18:32:08.943"/>
+</kw>
+<status status="PASS" starttime="20240602 18:32:01.973" endtime="20240602 18:32:08.943"/>
+</kw>
+<test id="s1-s1-s1-t1" name="validate application functionality" line="9">
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>5s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20240602 18:32:08.946" endtime="20240602 18:32:08.947"/>
+</kw>
+<kw name="login to application" library="login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@name="username"]</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:08.954" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
+<status status="PASS" starttime="20240602 18:32:08.952" endtime="20240602 18:32:09.460"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>//input[@name="password"]</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:09.460" level="INFO">Typing password into text field '//input[@name="password"]'.</msg>
+<msg timestamp="20240602 18:32:09.507" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20240602 18:32:09.600" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20240602 18:32:09.460" endtime="20240602 18:32:09.600"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:09.600" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20240602 18:32:09.600" endtime="20240602 18:32:11.008"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>//span[text()='Dashboard']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240602 18:32:11.008" endtime="20240602 18:32:11.467"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>//span[text()='Dashboard']</arg>
+<arg>Dashboard</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20240602 18:32:11.467" level="INFO">Verifying element '//span[text()='Dashboard']' contains exact text 'Dashboard'.</msg>
+<status status="PASS" starttime="20240602 18:32:11.467" endtime="20240602 18:32:11.498"/>
+</kw>
+<status status="PASS" starttime="20240602 18:32:08.950" endtime="20240602 18:32:11.498"/>
+</kw>
+<kw name="admin page" library="admin">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//span[text()='Admin']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:11.498" level="INFO">Clicking element '//span[text()='Admin']'.</msg>
+<status status="PASS" starttime="20240602 18:32:11.498" endtime="20240602 18:32:12.754"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${row_count}</var>
+<arg>//div[@role="row"]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.594" level="INFO">${row_count} = 4</msg>
+<status status="PASS" starttime="20240602 18:32:12.755" endtime="20240602 18:32:13.594"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${enabled_count}</var>
+<arg>0</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240602 18:32:13.594" level="INFO">${enabled_count} = 0</msg>
+<status status="PASS" starttime="20240602 18:32:13.594" endtime="20240602 18:32:13.594"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>1</value>
+<value>${row_count}+1</value>
+<iter>
+<var name="${index}">1</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${status}</var>
+<arg>(//div[@role="row"])[${index}]/div[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.610" level="INFO">${status} = Status</msg>
+<status status="PASS" starttime="20240602 18:32:13.594" endtime="20240602 18:32:13.610"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}'=='Enabled'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${employee_name}</var>
+<arg>(//div[@role="row"])[${index}]/div[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20240602 18:32:13.610" endtime="20240602 18:32:13.610"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${enabled_count}</var>
+<arg>${enabled_count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20240602 18:32:13.610" endtime="20240602 18:32:13.610"/>
+</kw>
+<status status="NOT RUN" starttime="20240602 18:32:13.610" endtime="20240602 18:32:13.610"/>
+</branch>
+<status status="PASS" starttime="20240602 18:32:13.610" endtime="20240602 18:32:13.610"/>
+</if>
+<status status="PASS" starttime="20240602 18:32:13.594" endtime="20240602 18:32:13.610"/>
+</iter>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${status}</var>
+<arg>(//div[@role="row"])[${index}]/div[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.641" level="INFO">${status} = Enabled</msg>
+<status status="PASS" starttime="20240602 18:32:13.610" endtime="20240602 18:32:13.641"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}'=='Enabled'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${employee_name}</var>
+<arg>(//div[@role="row"])[${index}]/div[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.657" level="INFO">${employee_name} = manda user</msg>
+<status status="PASS" starttime="20240602 18:32:13.641" endtime="20240602 18:32:13.657"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${enabled_count}</var>
+<arg>${enabled_count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240602 18:32:13.657" level="INFO">${enabled_count} = 1</msg>
+<status status="PASS" starttime="20240602 18:32:13.657" endtime="20240602 18:32:13.657"/>
+</kw>
+<status status="PASS" starttime="20240602 18:32:13.641" endtime="20240602 18:32:13.657"/>
+</branch>
+<status status="PASS" starttime="20240602 18:32:13.641" endtime="20240602 18:32:13.657"/>
+</if>
+<status status="PASS" starttime="20240602 18:32:13.610" endtime="20240602 18:32:13.657"/>
+</iter>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${status}</var>
+<arg>(//div[@role="row"])[${index}]/div[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.688" level="INFO">${status} = Enabled</msg>
+<status status="PASS" starttime="20240602 18:32:13.657" endtime="20240602 18:32:13.688"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}'=='Enabled'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${employee_name}</var>
+<arg>(//div[@role="row"])[${index}]/div[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.704" level="INFO">${employee_name} = Qwerty LName</msg>
+<status status="PASS" starttime="20240602 18:32:13.688" endtime="20240602 18:32:13.704"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${enabled_count}</var>
+<arg>${enabled_count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240602 18:32:13.704" level="INFO">${enabled_count} = 2</msg>
+<status status="PASS" starttime="20240602 18:32:13.704" endtime="20240602 18:32:13.704"/>
+</kw>
+<status status="PASS" starttime="20240602 18:32:13.688" endtime="20240602 18:32:13.704"/>
+</branch>
+<status status="PASS" starttime="20240602 18:32:13.688" endtime="20240602 18:32:13.704"/>
+</if>
+<status status="PASS" starttime="20240602 18:32:13.657" endtime="20240602 18:32:13.704"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${status}</var>
+<arg>(//div[@role="row"])[${index}]/div[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.719" level="INFO">${status} = Enabled</msg>
+<status status="PASS" starttime="20240602 18:32:13.704" endtime="20240602 18:32:13.719"/>
+</kw>
+<if>
+<branch type="IF" condition="'${status}'=='Enabled'">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${employee_name}</var>
+<arg>(//div[@role="row"])[${index}]/div[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.764" level="INFO">${employee_name} = FName LName</msg>
+<status status="PASS" starttime="20240602 18:32:13.735" endtime="20240602 18:32:13.764"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${enabled_count}</var>
+<arg>${enabled_count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240602 18:32:13.764" level="INFO">${enabled_count} = 3</msg>
+<status status="PASS" starttime="20240602 18:32:13.764" endtime="20240602 18:32:13.764"/>
+</kw>
+<status status="PASS" starttime="20240602 18:32:13.719" endtime="20240602 18:32:13.764"/>
+</branch>
+<status status="PASS" starttime="20240602 18:32:13.719" endtime="20240602 18:32:13.764"/>
+</if>
+<status status="PASS" starttime="20240602 18:32:13.704" endtime="20240602 18:32:13.764"/>
+</iter>
+<status status="PASS" starttime="20240602 18:32:13.594" endtime="20240602 18:32:13.764"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>${enabled_count}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240602 18:32:13.765" level="INFO">3</msg>
+<status status="PASS" starttime="20240602 18:32:13.765" endtime="20240602 18:32:13.765"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//div[@class="oxd-select-text-input"])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.765" level="INFO">Clicking element '(//div[@class="oxd-select-text-input"])[1]'.</msg>
+<status status="PASS" starttime="20240602 18:32:13.765" endtime="20240602 18:32:13.823"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>(//span[text()='Admin'])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.823" level="INFO">Clicking element '(//span[text()='Admin'])[2]'.</msg>
+<status status="PASS" starttime="20240602 18:32:13.823" endtime="20240602 18:32:13.883"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@type="submit"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:13.883" level="INFO">Clicking element '//button[@type="submit"]'.</msg>
+<status status="PASS" starttime="20240602 18:32:13.883" endtime="20240602 18:32:13.940"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{admin}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240602 18:32:13.941" level="INFO">@{admin} = [ ]</msg>
+<status status="PASS" starttime="20240602 18:32:13.941" endtime="20240602 18:32:13.941"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${row_count}</var>
+<arg>//div[@role="row"]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240602 18:32:14.334" level="INFO">${row_count} = 2</msg>
+<status status="PASS" starttime="20240602 18:32:13.941" endtime="20240602 18:32:14.334"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>2</value>
+<value>${row_count}+1</value>
+<iter>
+<var name="${index}">2</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${admin_text}</var>
+<arg>(//div[@role="row"])[${index}]/div[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240602 18:32:14.360" level="INFO">${admin_text} = Admin</msg>
+<status status="PASS" starttime="20240602 18:32:14.335" endtime="20240602 18:32:14.360"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${admin}</arg>
+<arg>${admin_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240602 18:32:14.360" endtime="20240602 18:32:14.360"/>
+</kw>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${file}</arg>
+<arg>2</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20240602 18:32:14.360" endtime="20240602 18:32:14.376"/>
+</kw>
+<kw name="Get Sheet" library="ExcelLibrary">
+<arg>${sheetname}</arg>
+<doc>Returns a page from the current document.</doc>
+<status status="PASS" starttime="20240602 18:32:14.376" endtime="20240602 18:32:14.376"/>
+</kw>
+<kw name="Write Excel Row" library="ExcelLibrary">
+<arg>7</arg>
+<arg>${admin}</arg>
+<doc>Writes a row to the document.</doc>
+<status status="PASS" starttime="20240602 18:32:14.376" endtime="20240602 18:32:14.376"/>
+</kw>
+<kw name="Save Excel Document" library="ExcelLibrary">
+<arg>${file}</arg>
+<doc>Saves the current document to disk.</doc>
+<status status="PASS" starttime="20240602 18:32:14.376" endtime="20240602 18:32:14.376"/>
+</kw>
+<kw name="Close All Excel Documents" library="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" starttime="20240602 18:32:14.392" endtime="20240602 18:32:14.392"/>
+</kw>
+<status status="PASS" starttime="20240602 18:32:14.335" endtime="20240602 18:32:14.392"/>
+</iter>
+<status status="PASS" starttime="20240602 18:32:14.334" endtime="20240602 18:32:14.392"/>
+</for>
+<kw name="Create List" library="BuiltIn">
+<var>${expect_list}</var>
+<arg>Admin</arg>
+<arg>Admin</arg>
+<arg>Admin</arg>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240602 18:32:14.392" level="INFO">${expect_list} = ['Admin', 'Admin', 'Admin']</msg>
+<status status="PASS" starttime="20240602 18:32:14.392" endtime="20240602 18:32:14.392"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${admin}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240602 18:32:14.392" level="INFO">['Admin']</msg>
+<status status="PASS" starttime="20240602 18:32:14.392" endtime="20240602 18:32:14.392"/>
+</kw>
+<status status="PASS" starttime="20240602 18:32:11.498" endtime="20240602 18:32:14.392"/>
+</kw>
+<status status="PASS" starttime="20240602 18:32:08.944" endtime="20240602 18:32:14.392"/>
+</test>
+<status status="PASS" starttime="20240602 18:32:01.248" endtime="20240602 18:32:14.392"/>
+</suite>
+<status status="PASS" starttime="20240602 18:32:01.248" endtime="20240602 18:32:14.392"/>
+</suite>
+<status status="PASS" starttime="20240602 18:32:01.217" endtime="20240602 18:32:14.400"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="OrangeHRM">OrangeHRM</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Testcases">OrangeHRM.Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Testcase">OrangeHRM.Testcases.Testcase</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240602 18:32:02.473" level="WARN">The chromedriver version (124.0.6367.91) detected in PATH at D:\Program Files\Python312\Scripts\chromedriver.exe might not be compatible with the detected chrome version (125.0.6422.114); currently, chromedriver 125.0.6422.141 is recommended for chrome 125.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
