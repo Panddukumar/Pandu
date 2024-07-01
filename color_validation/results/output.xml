@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240627 13:46:20.574" rpa="false" schemaversion="4">
+<suite id="s1" name="Color Validation" source="D:\Pandu\GITPandu\color_validation">
+<suite id="s1-s1" name="Robot Color" source="D:\Pandu\GITPandu\color_validation\robot_color.robot">
+<test id="s1-s1-t1" name="launching" line="12">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240627 13:46:20.878" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<status status="PASS" starttime="20240627 13:46:20.878" endtime="20240627 13:46:25.854"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240627 13:46:30.854" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240627 13:46:25.854" endtime="20240627 13:46:30.854"/>
+</kw>
+<status status="PASS" starttime="20240627 13:46:20.878" endtime="20240627 13:46:30.854"/>
+</test>
+<test id="s1-s1-t2" name="element" line="15">
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${element}</var>
+<arg>//button[@type='submit']</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20240627 13:46:30.905" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0795f9575821ad7b96b01d425012fb2d", element="f.DA65D2A96644B4C47550A543343A13EF.d.E00E588291DA4A6C5CD2ED4F841EF414.e.8")&gt;</msg>
+<status status="PASS" starttime="20240627 13:46:30.869" endtime="20240627 13:46:30.905"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${element}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240627 13:46:30.907" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="0795f9575821ad7b96b01d425012fb2d", element="f.DA65D2A96644B4C47550A543343A13EF.d.E00E588291DA4A6C5CD2ED4F841EF414.e.8")&gt;</msg>
+<status status="PASS" starttime="20240627 13:46:30.906" endtime="20240627 13:46:30.907"/>
+</kw>
+<status status="PASS" starttime="20240627 13:46:30.854" endtime="20240627 13:46:30.907"/>
+</test>
+<test id="s1-s1-t3" name="Verify Background Color" line="18">
+<kw name="Color" library="test">
+<var>${result}</var>
+<arg>${element}</arg>
+<msg timestamp="20240627 13:46:30.932" level="INFO">${result} = rgba(255, 123, 29, 1)</msg>
+<status status="PASS" starttime="20240627 13:46:30.910" endtime="20240627 13:46:30.932"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${result}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240627 13:46:30.933" level="INFO">rgba(255, 123, 29, 1)</msg>
+<status status="PASS" starttime="20240627 13:46:30.933" endtime="20240627 13:46:30.933"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${exp_color}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20240627 13:46:30.934" level="FAIL">rgba(255, 123, 29, 1) != rgba(29, 255, 247, 1)</msg>
+<status status="FAIL" starttime="20240627 13:46:30.933" endtime="20240627 13:46:30.934"/>
+</kw>
+<status status="FAIL" starttime="20240627 13:46:30.909" endtime="20240627 13:46:30.934">rgba(255, 123, 29, 1) != rgba(29, 255, 247, 1)</status>
+</test>
+<doc>color validation in login page</doc>
+<status status="FAIL" starttime="20240627 13:46:20.605" endtime="20240627 13:46:30.937"/>
+</suite>
+<status status="FAIL" starttime="20240627 13:46:20.574" endtime="20240627 13:46:30.941"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="1" skip="0" id="s1" name="Color Validation">Color Validation</stat>
+<stat pass="2" fail="1" skip="0" id="s1-s1" name="Robot Color">Color Validation.Robot Color</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

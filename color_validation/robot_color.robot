@@ -1,4 +1,5 @@
 *** Settings ***
+Documentation    color validation in login page
 Library    SeleniumLibrary
 Library    test.py
 
